@@ -1,7 +1,7 @@
 /**
  * Curso: Técnico em Informática para a Internet EaD
  * Instituição: SENAC/RS
- * ATIVIDADE 1 - UC13
+ * ATIVIDADE 2 - UC13
  * 
  * Aluno: José Antônio Nunes de Morais
 */
