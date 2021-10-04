@@ -51,7 +51,7 @@ export default function App() {
     }
     switch(buttonPressed){
       case 'DEL':
-        setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 2)))
+        setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 1)))
         return
       case 'LIMPAR': // Limpa todo o conteúdo
         setLastNumber("") 
@@ -84,12 +84,12 @@ export default function App() {
 
         {buttons.map((button) => 
           button === '=' ? // Mapeamento do botão =
-        <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#3dd0e3'}]}>
+        <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#4b0082'}]}>
           <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
         </TouchableOpacity>
           : // Mapeamento dos outros botões
           <TouchableOpacity onPress={() => handleInput(button)} key={button} style={styles.button}>
-            <Text style={[styles.textButton, {color: typeof(button) === 'number' ? 'black': '#0093a6'}]}>{button}</Text>
+            <Text style={[styles.textButton, {color: typeof(button) === 'number' ? 'white': '#a9a9a9'}]}>{button}</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -99,20 +99,23 @@ export default function App() {
 
 // Estilização
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container: {    
+    color: "black",
+    flex: 1
   },
   results: {
+    color: "#000080",
     flex: 2,
-    justifyContent: "center",
-    backgroundColor: "#f5f5f5"
+    justifyContent: "center",      
+    //backgroundColor: "#bc8f8f"
+    backgroundColor: "#000080"
   },
   resultText: {
-    color: "#282F38",
+    color: "#f0fff0",    
     fontSize: 32,
     fontWeight: "bold",
     padding: 12,
-    textAlign: "right"
+    textAlign: "right",    
   },
   historyText:{
     color: "#7c7c7c",
@@ -125,15 +128,16 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   button: {
-    backgroundColor: 'white',
+    color: "white",
+    backgroundColor: "#663399",
     alignItems: 'center',
     justifyContent: 'center',
     minWidth: 90, 
     minHeight: 90,
     flex: 2,
   },
-  textButton: {
-    color: "#7c7c7c",
-    fontSize: 20,
+  textButton: {    
+    color: "#b0e0e6",
+    fontSize: 20,    
   } 
 });
